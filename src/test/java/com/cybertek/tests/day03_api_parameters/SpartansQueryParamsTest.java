@@ -16,7 +16,7 @@ public class SpartansQueryParamsTest {
     @BeforeAll //Run once before all tests
     public static void setUp(){
         System.out.println("Set up method");
-        RestAssured.baseURI = ConfigurationReader.getProperty("spartan.url");
+        RestAssured.baseURI = ConfigurationReader.getProperty("spartan.url");  // http://44.201.134.164:1000/ords/hr
 
     }
 
