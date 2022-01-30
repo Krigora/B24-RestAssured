@@ -39,7 +39,7 @@ public class ORDSGetRequestsTest {
         assertEquals(200 , response.statusCode());
 
         System.out.println("Content type = " + response.contentType());
-        assertEquals("application/json", response.contentType());
+
 
         response.prettyPrint();
 
