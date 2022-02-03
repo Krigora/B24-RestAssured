@@ -57,10 +57,6 @@ public class SpartanJsonToCollectionsTest extends SpartanTestBase {
 //            System.out.println("key value= " + spartanMap.get(key));
 //        }
 
-
-
-
-
     }
 
     @Test
@@ -74,6 +70,18 @@ public class SpartanJsonToCollectionsTest extends SpartanTestBase {
         System.out.println("first spartan info = " + spartanList.get(0));
         System.out.println("second spartan info = " + spartanList.get(1) );
         System.out.println("third spartan's id = " + spartanList.get(2).get("id") );
+
+
+        Map<String, Object> firstSpartan = spartanList.get(0);
+        System.out.println("firstSpartan = " + firstSpartan);
+
+        for (Map<String, Object> eachSpartan : spartanList){
+            System.out.println(eachSpartan.get("id"));
+
+
+        }
+
+        spartanList.forEach(eachSp -> System.out.println(eachSp.get("name")));
 
 
     }

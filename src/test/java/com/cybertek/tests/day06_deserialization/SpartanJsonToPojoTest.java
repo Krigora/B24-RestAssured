@@ -1,6 +1,7 @@
-package com.cybertek.tests.pojo;
+package com.cybertek.tests.day06_deserialization;
 
 import com.cybertek.tests.SpartanTestBase;
+import com.cybertek.tests.pojo.Spartan;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
