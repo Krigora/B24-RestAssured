@@ -11,7 +11,7 @@ public class Country {
     @JsonProperty("country_id")
     private String countryId;
     @JsonProperty("country_name")
-    private String countryName;
+   private String countryName;
     @JsonProperty("region_id")
     private String regionId;
 
