@@ -1,0 +1,72 @@
+02/08/2022
+----------
+
+API practice:
+
+    de-serialization
+    hacmrest
+    ---post
+
+de-serialization -> from Json > java object
+
+Json body -> java object : java collection
+                         : java pojo class object
+
+{
+    "post code": "12189",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Watervliet",
+            "longitude": "-73.7123",
+            "state": "New York",
+            "state abbreviation": "NY",
+            "latitude": "42.7298"
+        }
+    ]
+}
+
+@Data
+public class ZipInfo {
+    @JsonProperty("post code")
+    private String postCode;
+
+    private String country;
+
+    @JsonProperty("country abbreviation")
+    private String countryAbbreviation;
+
+
+    List<Place> places;
+
+}
+
+@Data
+public class Place {
+    @JsonProperty("place name")
+    private String placeName;
+
+    private String longitude;
+
+    private String state;
+
+    @JsonProperty("state abbreviation")
+    private String stateAbbreviation;
+
+    private String latitude;
+}
+========================================
+public class Car {
+    private Engine engine;
+}
+
+IS-A -> Inheritance
+HAS-A -> Composition. One class has instance
+variable of another class
+===========================================
+
+How do you do code coverage?
+How do you do code quality review?
+
+We use Sonarcube, it checks code quality and code test coverage automatically when we create a PULL request in GitHub.
