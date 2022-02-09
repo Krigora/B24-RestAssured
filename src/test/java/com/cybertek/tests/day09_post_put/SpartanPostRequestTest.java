@@ -151,3 +151,4 @@ assertThat(resSpartan.getPhone(), equalTo(reqSpartan.getPhone()));
     }
 
 }
+
