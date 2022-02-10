@@ -13,19 +13,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ORDSPostPutDeleteRegionTest extends ORDSTestBase {
-
     /**
      * given accept is json
      * and content type is json
      * When I send post request to "/regions"
      * With json:
      * {
-     * "region_id":865,
-     * "region_name":"Test Region"
+     *     "region_id":100,
+     *     "region_name":"Test Region"
      * }
      * Then status code is 201
      * content type is json
-     * region_id is 865
+     * region_id is 100
      * region_name is Test Region
      */
     @Test
