@@ -18,14 +18,15 @@ import static org.hamcrest.Matchers.not;
 
 public class BookItDataDrivenApiLoginTest {
 
-    public static List<Map<String, String>> getAllUserCredentials(){
-        ExcelUtil excelUtil = new ExcelUtil("BookItQa3.xlsx","QA3"); //open excel file/sheet
+    public static List<Map<String, String>> getAllUserCredentials() {
+        ExcelUtil excelUtil = new ExcelUtil("BookItQa3.xlsx", "QA3"); //open excel file/sheet
         //return excel data as list of maps
         return excelUtil.getDataList();
 
     }
+
     @BeforeAll
-    public static void setUp(){
+    public static void setUp() {
         baseURI = ConfigurationReader.getProperty("bookit.base.url");
     }
 
@@ -40,11 +41,11 @@ public class BookItDataDrivenApiLoginTest {
 
     @ParameterizedTest
     @MethodSource("getAllUserCredentials")
-    public void AllUsersLoginTest(Map<String , String> userInfo){
+    public void allUsersLoginTest(Map<String, String> userInfo) {
         given().accept(ContentType.JSON)
                 .and().queryParams(userInfo)
                 .when().get("/sign")
-                .then().statusCode(200)
+                .then().assertThat().statusCode(200)
                 .and().body("accessToken", not(emptyString()))
                 .log().all();
 
